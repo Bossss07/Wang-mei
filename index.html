@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2026 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* ========== CSS Reset & Base Styles ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(to bottom, #1a0033 0%, #330066 50%, #4d0099 100%);
+            min-height: 100vh;
+            position: relative;
+            color: #fff;
+        }
+
+        /* ========== พื้นหลังท้องฟ้าและดาว ========== */
+        .sky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* ========== Container หลัก ========== */
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ========== ข้อความหลัก ========== */
+        .recipient {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2em;
+            color: #ffd1dc;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 182, 193, 0.8);
+        }
+
+        .main-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5em;
+            font-weight: 700;
+            color: #ffd700;
+            margin-bottom: 30px;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 50px rgba(255, 182, 193, 0.5);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 50px rgba(255, 182, 193, 0.5); }
+            50% { text-shadow: 0 0 40px rgba(255, 215, 0, 1), 0 0 70px rgba(255, 182, 193, 0.8); }
+        }
+
+        .main-message {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #ffd1dc;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            padding: 0 15px;
+        }
+
+        /* ========== ปุ่มหลัก ========== */
+        .btn-main {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c239b3 100%);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            font-size: 1.3em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
+        }
+
+        .btn-main:active {
+            transform: translateY(-2px);
+        }
+
+        /* ========== ข้อความซ่อน ========== */
+        .hidden-message {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+            max-width: 650px;
+            margin: 30px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 209, 220, 0.3);
+        }
+
+        .hidden-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hidden-message p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #ffd1dc;
+            margin-bottom: 15px;
+        }
+
+        /* ========== กล่องของขวัญ ========== */
+        .gift-box {
+            width: 120px;
+            height: 120px;
+            margin: 40px auto 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .gift-box:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .gift {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff6b9d 0%, #ffd700 100%);
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.5);
+        }
+
+        .gift::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background: #ffd700;
+            transform: translateY(-50%);
+        }
+
+        .gift::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 15px;
+            background: #ffd700;
+            transform: translateX(-50%);
+        }
+
+        .bow {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3em;
+        }
+
+        /* ========== Surprise Message ========== */
+        .surprise {
+            display: none;
+            margin-top: 20px;
+            padding: 25px;
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 15px;
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            animation: fadeInScale 0.8s ease;
+        }
+
+        .surprise.show {
+            display: block;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* ========== ควบคุมเพลง ========== */
+        .music-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c239b3 100%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(255, 107, 157, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .music-control:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(255, 107, 157, 0.7);
+        }
+
+        .music-icon {
+            font-size: 1.5em;
+        }
+
+        /* ========== พลุ ========== */
+        .firework {
+            position: fixed;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .firework-particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: explode 1.5s ease-out forwards;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty)) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* ========== หัวใจลอย ========== */
+        .heart {
+            position: fixed;
+            font-size: 2em;
+            pointer-events: none;
+            z-index: 998;
+            animation: floatHeart 4s ease-in forwards;
+            opacity: 0.8;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* ========== ประกายแสง ========== */
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 997;
+            animation: sparkleAnim 1.5s ease-out forwards;
+        }
+
+        @keyframes sparkleAnim {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
+        /* ========== Typewriter Effect ========== */
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid #ffd700;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #ffd700; }
+        }
+
+        /* ========== Responsive ========== */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5em;
+            }
+
+            .recipient {
+                font-size: 1.5em;
+            }
+
+            .main-message {
+                font-size: 1.1em;
+            }
+
+            .btn-main {
+                font-size: 1.1em;
+                padding: 15px 35px;
+            }
+
+            .gift-box {
+                width: 100px;
+                height: 100px;
+            }
+
+            .music-control {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2em;
+            }
+
+            .recipient {
+                font-size: 1.3em;
+            }
+
+            .main-message {
+                font-size: 1em;
+            }
+
+            .hidden-message p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- พื้นหลังท้องฟ้า -->
+    <div class="sky" id="sky"></div>
+
+    <!-- เนื้อหาหลัก -->
+    <div class="container">
+        <div class="recipient">ถึง 王媚 💕</div>
+        
+        <h1 class="main-title">Happy New Year 2026 🎆</h1>
+        
+        <div class="main-message">
+            <p> To 王媚 </p>
+        </div>
+
+        <button class="btn-main" id="wishBtn">คลิกเพื่อรับคำอวยพร 💌</button>
+
+        <div class="hidden-message" id="hiddenMsg">
+                  <p>✨ May every morning you wake up be filled with brightness and positivity</p>
+
+            <p>💖 May this New Year be full of smiles, happiness, and endless love</p>
+
+            <p>🌟 May all your dreams come true in 2026</p>
+
+            <p>🎉 I wish you happiness and good days every day, forever</p>
+
+
+        </div>
+
+        <!-- กล่องของขวัญ -->
+        <div class="gift-box" id="giftBox">
+            <div class="bow">🎀</div>
+            <div class="gift"></div>
+        </div>
+
+        <div class="surprise" id="surprise">
+            <h2 style="font-family: 'Dancing Script', cursive; font-size: 2em; color: #ffd700; margin-bottom: 15px;">🎁 Surprise! 🎁</h2>
+            <p style="font-size: 1.2em;"> 💝</p>
+            <p style="font-size: 1.1em;">Thank you for being you! 🌈✨</p>
+        </div>
+    </div>
+
+    <!-- ควบคุมเพลง -->
+    <div class="music-control" id="musicBtn" title="เปิด/ปิดเพลง">
+        <span class="music-icon">🔊</span>
+    </div>
+
+    <!-- เพลง -->
+    <audio id="bgMusic" loop>
+        <source src="https://cdnjs.cloudflare.com/ajax/libs/audio-samples/0.1.0/sample.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // ========== ตัวแปรหลัก ==========
+        const wishBtn = document.getElementById('wishBtn');
+        const hiddenMsg = document.getElementById('hiddenMsg');
+        const giftBox = document.getElementById('giftBox');
+        const surprise = document.getElementById('surprise');
+        const musicBtn = document.getElementById('musicBtn');
+        const bgMusic = document.getElementById('bgMusic');
+        const sky = document.getElementById('sky');
+        
+        let musicPlaying = false;
+        let wishBtnClicked = false;
+
+        // ========== สร้างดาว ==========
+        function createStars() {
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                sky.appendChild(star);
+            }
+        }
+
+        // ========== สร้างพลุ ==========
+        function createFirework(x, y) {
+            const colors = ['#ff6b9d', '#c239b3', '#ffd700', '#ff1493', '#da70d6', '#ffd1dc'];
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'firework-particle';
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                
+                const angle = (Math.PI * 2 * i) / particleCount;
+                const velocity = 50 + Math.random() * 50;
+                const tx = Math.cos(angle) * velocity;
+                const ty = Math.sin(angle) * velocity;
+                
+                particle.style.setProperty('--tx', tx + 'px');
+                particle.style.setProperty('--ty', ty + 'px');
+                
+                document.body.appendChild(particle);
+                
+                setTimeout(() => particle.remove(), 1500);
+            }
+        }
+
+        // ========== สร้างหัวใจ ==========
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.textContent = ['💕', '💖', '💗', '💝', '💞'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.bottom = '-50px';
+            heart.style.fontSize = (Math.random() * 2 + 1) + 'em';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 4000);
+        }
+
+        // ========== สร้างประกาย ==========
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.textContent = '✨';
+            sparkle.style.left = x + 'px';
+            sparkle.style.top = y + 'px';
+            sparkle.style.fontSize = (Math.random() * 1.5 + 1) + 'em';
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => sparkle.remove(), 1500);
+        }
+
+        // ========== พลุสุ่ม ==========
+        function randomFireworks() {
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * (window.innerHeight * 0.6);
+            createFirework(x, y);
+            createSparkle(x, y);
+        }
+
+        // ========== เริ่มเอฟเฟกต์พื้นฐาน ==========
+        function startBasicEffects() {
+            // พลุเบาๆ ทุก 3 วินาที
+            setInterval(randomFireworks, 3000);
+            
+            // หัวใจลอยทุก 2 วินาที
+            setInterval(createHeart, 2000);
+        }
+
+        // ========== ปุ่มคำอวยพร ==========
+        wishBtn.addEventListener('click', function() {
+            if (!wishBtnClicked) {
+                wishBtnClicked = true;
+                
+                // แสดงข้อความซ่อน
+                hiddenMsg.classList.add('show');
+                
+                // เปลี่ยนข้อความปุ่ม
+                this.textContent = 'Thanks for click 💝';
+                this.style.background = 'linear-gradient(135deg, #ffd700 0%, #ff6b9d 100%)';
+                
+                // พลุเยอะขึ้น
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        const x = Math.random() * window.innerWidth;
+                        const y = Math.random() * (window.innerHeight * 0.5);
+                        createFirework(x, y);
+                        createSparkle(x, y);
+                    }, i * 300);
+                }
+                
+                // หัวใจเยอะขึ้น
+                for (let i = 0; i < 10; i++) {
+                    setTimeout(createHeart, i * 200);
+                }
+                
+                // เล่นเพลงอัตโนมัติ (ถ้ายังไม่เล่น)
+                if (!musicPlaying) {
+                    playMusic();
+                }
+            }
+        });
+
+        // ========== กล่องของขวัญ ==========
+        giftBox.addEventListener('click', function() {
+            surprise.classList.add('show');
+            
+            // เอฟเฟกต์พลุและหัวใจรอบกล่อง
+            const rect = giftBox.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    createFirework(centerX, centerY);
+                    createSparkle(centerX + (Math.random() - 0.5) * 100, centerY + (Math.random() - 0.5) * 100);
+                }, i * 200);
+            }
+            
+            for (let i = 0; i < 8; i++) {
+                setTimeout(createHeart, i * 150);
+            }
+            
+            // แอนิเมชันกล่อง
+            this.style.animation = 'none';
+            setTimeout(() => {
+                this.style.animation = 'bounce 0.5s ease';
+            }, 10);
+        });
+
+        // ========== ควบคุมเพลง ==========
+        function playMusic() {
+            bgMusic.play().then(() => {
+                musicPlaying = true;
+                musicBtn.querySelector('.music-icon').textContent = '🔊';
+            }).catch(err => {
+                console.log('ไม่สามารถเล่นเพลงอัตโนมัติได้:', err);
+                musicPlaying = false;
+            });
+        }
+
+        function toggleMusic() {
+            if (musicPlaying) {
+                bgMusic.pause();
+                musicPlaying = false;
+                musicBtn.querySelector('.music-icon').textContent = '🔇';
+            } else {
+                playMusic();
+            }
+        }
+
+        musicBtn.addEventListener('click', toggleMusic);
+
+        // ========== เริ่มต้นเมื่อโหลดหน้าเว็บ ==========
+        window.addEventListener('load', function() {
+            createStars();
+            startBasicEffects();
+            
+            // พลุต้อนรับ
+            setTimeout(() => {
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(randomFireworks, i * 500);
+                }
+            }, 500);
+        });
+
+        // ========== Animation Bounce สำหรับกล่องของขวัญ ==========
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes bounce {
+                0%, 100% { transform: translateY(0) scale(1); }
+                25% { transform: translateY(-20px) scale(1.1); }
+                50% { transform: translateY(0) scale(1.05); }
+                75% { transform: translateY(-10px) scale(1.05); }
+  `;
+        document.head.appendChild(style);
+
+        // ========== ป้องกันการคลิกขวา (Optional) ==========
+        document.addEventListener('contextmenu', e => e.preventDefault());
+    </script>
+</body>
+</html>
